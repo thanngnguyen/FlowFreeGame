@@ -12,7 +12,6 @@ import java.util.*;
 import java.io.*;
 import java.util.List;
 
-// Main class to run the game
 public class FlowFreeGame {
     private JFrame frame;
     private CardLayout cardLayout;

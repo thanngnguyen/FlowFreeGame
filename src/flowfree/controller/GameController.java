@@ -2,6 +2,7 @@ package flowfree.controller;
 
 import flowfree.FlowFreeGame;
 import flowfree.model.config.LevelConfig;
+import flowfree.model.core.GameModel;
 import flowfree.view.*;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class GameController {
     private Point lastPoint;
     private char drawingColor;
 
-    public GameController(flowfree.model.core.GameModel model, GameView view, FlowFreeGame game, String difficulty, int levelIndex) {
+    public GameController(GameModel model, GameView view, FlowFreeGame game, String difficulty, int levelIndex) {
         if (model == null || view == null || game == null || difficulty == null) {
             throw new IllegalArgumentException("Model, view, game, and difficulty cannot be null");
         }

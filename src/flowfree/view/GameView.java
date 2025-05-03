@@ -6,10 +6,12 @@ import java.awt.*;
 import java.util.*;
 
 import flowfree.FlowFreeGame;
+import flowfree.model.core.GameModel;
+import flowfree.controller.GameController;
 import flowfree.view.components.CustomButton;
 
 public class GameView extends JPanel {
-    private flowfree.model.core.GameModel model;
+    private GameModel model;
     private FlowFreeGame game;
     private String difficulty;
     private int levelIndex;
@@ -18,7 +20,7 @@ public class GameView extends JPanel {
     private static final int DOT_SIZE = 40;
     private static final int PIPE_WIDTH = 20;
     private static final Map<Character, Color> COLOR_MAP = new HashMap<>();
-    private flowfree.controller.GameController controller;
+    private GameController controller;
     private RoundedProgressBar timerBar;
     private Timer uiTimer; // Để cập nhật giao diện thanh thời gian
 
@@ -104,7 +106,7 @@ public class GameView extends JPanel {
         }
     }
 
-    public GameView(flowfree.model.core.GameModel model, FlowFreeGame game, String difficulty, int levelIndex) {
+    public GameView(GameModel model, FlowFreeGame game, String difficulty, int levelIndex) {
         if (model == null || game == null || difficulty == null) {
             throw new IllegalArgumentException("Model, game, and difficulty cannot be null");
         }
@@ -302,7 +304,7 @@ public class GameView extends JPanel {
         return gridPanel;
     }
 
-    public void setController(flowfree.controller.GameController controller) {
+    public void setController(GameController controller) {
         if (controller == null) {
             throw new IllegalArgumentException("Controller cannot be null");
         }
